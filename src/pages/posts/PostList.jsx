@@ -12,7 +12,7 @@ const PostList = () => {
       setLoading(true);
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:8000/posts", {
+      const res = await fetch("https://two026-blog-backend.onrender.com/posts", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -45,7 +45,7 @@ const PostList = () => {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        `http://localhost:8000/posts/delete/${id}`,
+        `https://two026-blog-backend.onrender.com/posts/delete/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -107,7 +107,7 @@ const PostList = () => {
               {/* Image */}
               {post.image ? (
                 <img
-                  src={`http://localhost:8000/uploads/${post.image}`}
+                  src={`https://two026-blog-backend.onrender.com/uploads/${post.image}`}
                   alt={post.title}
                   className="w-full h-40 object-cover"
                 />

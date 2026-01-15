@@ -19,7 +19,7 @@ const EditPost = () => {
 
   const fetchPost = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/posts/${id}`)
+      const res = await fetch(`https://two026-blog-backend.onrender.com/posts/${id}`)
       const data = await res.json()
       const post = data.getSinglePost
       setFormData({
@@ -71,7 +71,7 @@ const EditPost = () => {
       }
 
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:8000/posts/update/${id}`, {
+      const res = await fetch(`https://two026-blog-backend.onrender.com/posts/update/${id}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -137,7 +137,7 @@ const EditPost = () => {
               src={
                 formData.image instanceof File
                   ? URL.createObjectURL(formData.image)
-                  : `http://localhost:8000/uploads/${formData.image}`
+                  : `https://two026-blog-backend.onrender.com/uploads/${formData.image}`
               }
               alt="post"
               className="w-32 h-32 object-cover border mb-2"

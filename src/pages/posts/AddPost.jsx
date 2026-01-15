@@ -41,7 +41,7 @@ const AddPost = () => {
 
    const token = localStorage.getItem("token");
 
-  const res = await fetch("http://localhost:8000/posts/admin/create", {
+  const res = await fetch("https://two026-blog-backend.onrender.com/posts/admin/create", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
